@@ -24,12 +24,14 @@ public class videoplayer extends AppCompatActivity {
         setContentView(R.layout.activity_videoplayer);
         videoView = findViewById(R.id.viedoview);
 
+
 //        videoView.setVideoPath("https://bestone-node-test.s3.ap-south-1.amazonaws.com/userUploads/jJQ3nH8W5IJ3o.mp4");
 //        videoView.start();
 
 
 
                 Uri videouri=Uri.parse("https://hdvideo9.com/files/download/id/2823");
+
 
 //        Uri videouri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.r);
         videoView.setVideoURI(videouri);
@@ -42,13 +44,19 @@ public class videoplayer extends AppCompatActivity {
 
 
 
-//        MediaController videoMediaController = new MediaController(this);
-//        videoMediaController.setMediaPlayer(videoView);
-//        videoMediaController.setAnchorView(videoView);
-//        videoView.setMediaController(videoMediaController);
-//        videoMediaController.requestFocus();
-//        videoView.start();
+
             }
+    @Override
+    public void onPause() {
+        super.onPause();
+        videoView.pause();
+    }
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        videoView.resume();
+    }
 
 
 
